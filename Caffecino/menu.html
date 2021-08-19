@@ -1,0 +1,563 @@
+<html>
+  <head>
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="css\cafestyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/cafejs.js"></script>
+    <style>
+      .filter-button {
+        font-size: 18px;
+        border: 1px solid #4caf50;
+        border-radius: 5px;
+        text-align: center;
+        color: #4caf50;
+        margin-bottom: 30px;
+      }
+      .filter-button:hover {
+        font-size: 18px;
+        border: 1px solid #4caf50;
+        border-radius: 5px;
+        text-align: center;
+        color: #ffffff;
+        background-color: #4caf50;
+      }
+      .btn-default:active .filter-button:active {
+        background-color: #4caf50;
+        color: white;
+      }
+      img {
+        height: 365px;
+        width: 365px;
+      }
+      h4 {
+        font-weight: bold;
+      }
+      .gallery_product {
+        margin-bottom: 30px;
+      }
+      .show-cart li {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="height: 85vh; background-image: url(images/2.jpg)">
+      <nav class="navbar navbar-fixed-top">
+        <div class="logo">
+          <a href="cafewebsite.html"><img src="images\logo%202.png" /></a>
+        </div>
+        <ul>
+          <li><a href="cafewebsite.html">Home</a></li>
+          <li class="active"><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reservation.html">Book a table</a></li>
+          <li>
+            <a href="signup.html"
+              ><i class="fa fa-user" aria-hidden="true"></i> Sign Up/Log In</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="title">
+        <h1>Menu</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div style="align-content: center; margin: 20px">
+        <button class="btn btn-default filter-button" data-filter="all">
+          All
+        </button>
+        <button class="btn btn-default filter-button" data-filter="bev">
+          Beverages
+        </button>
+        <button class="btn btn-default filter-button" data-filter="food">
+          Food
+        </button>
+        <button class="btn btn-default filter-button" data-filter="des">
+          Deserts
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#cart"
+          >
+          <i class="fa fa-shopping-cart"></i>
+            Cart (<span class="total-count"></span>)</button
+          ><button class="clear-cart btn btn-danger">Clear Cart</button>
+        </div>
+      </div>
+      <br />
+
+      <!--menu items -->
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter food"
+      >
+        <img
+          src="images/products/Afghani-Chicken-Biryani_2.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Afghani Chicken Biryani</h4>
+          <a
+            href="#"
+            data-name="Afghani-Chicken-Biryani"
+            data-price="200"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter food"
+      >
+        <img
+          src="images/products/Big-Crunch-Chicken-Classic-Burger.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Big-Crunch Chicken Classic Burger</h4>
+          <a
+            href="#"
+            data-name="Big-Crunch-Chicken-Classic-Burger"
+            data-price="150"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter food"
+      >
+        <img
+          src="images/products/Big-Crunch-Veg-Cheese-Burger_2.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Big Crunch Veg Cheese Burger</h4>
+          <a
+            href="#"
+            data-name="Big-Crunch-Veg-Cheese-Burger"
+            data-price="120"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter food"
+      >
+        <img src="images/products/CrispyVeg_2.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>CrispyVeg</h4>
+          <a
+            href="#"
+            data-name="CrispyVeg"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter food"
+      >
+        <img
+          src="images/products/Chilli-Cheese-Toastizza_2.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Chilli Cheese Toastizza</h4>
+          <a
+            href="#"
+            data-name="Chilli-Cheese-Toastizza"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bev"
+      >
+        <img src="images/products/Cafe-Mocha.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Cafe Mocha</h4>
+          <a
+            href="#"
+            data-name="Cafe-Mocha"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bev"
+      >
+        <img src="images/products/CafeLatte.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>CafeLatte</h4>
+          <a
+            href="#"
+            data-name="CafeLatte"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bev"
+      >
+        <img src="images/products/Cappuccino_3.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Cappuccino</h4>
+          <a
+            href="#"
+            data-name="Cappuccino"
+            data-price="50"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bev"
+      >
+        <img src="images/products/chocolate_0.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Chocolate Shake</h4>
+          <a
+            href="#"
+            data-name="Chocolate-Shake"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bev"
+      >
+        <img src="images/products/Masala-Chai_0.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Masala Chai</h4>
+          <a
+            href="#"
+            data-name="Masala-Chai"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter des"
+      >
+        <img
+          src="images/products/836x663-black-forest-cake.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Black forest cake</h4>
+          <a
+            href="#"
+            data-name="Black-forest-cake"
+            data-price="200"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter des"
+      >
+        <img src="images/products/836x663-Brownie.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Brownie</h4>
+          <a
+            href="#"
+            data-name="Brownie"
+            data-price="150"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter des"
+      >
+        <img
+          src="images/products/836x663-Coco-Slice.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Coco Slice</h4>
+          <a
+            href="#"
+            data-name="Coco-Slice"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter des"
+      >
+        <img
+          src="images/products/836x663-dutch-truffle-cake.jpg"
+          class="img-responsive"
+        />
+        <div style="text-align: center">
+          <h4>Dutch truffle cake</h4>
+          <a
+            href="#"
+            data-name="Dutch-truffle-cake"
+            data-price="200"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter des"
+      >
+        <img src="images/products/836x663-Eclair.jpg" class="img-responsive" />
+        <div style="text-align: center">
+          <h4>Eclair</h4>
+          <a
+            href="#"
+            data-name="Eclair"
+            data-price="100"
+            class="add-to-cart btn btn-success"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table"></table>
+            <div>Total price: ₹ <span class="total-cart"></span></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Order now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer section-->
+    <div class="navbar navbar-inverse" class="footer-wrapper">
+      <div class="container-fluid">
+        <div class="footer-mid-part">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-one">
+                <div class="footer-heading"><h2>Caffaccino</h2></div>
+                <div class="footer-contact-box">
+                  <div class="footer-contact-text">
+                    <p>
+                      Far far away, behind the word mountains, far from the
+                      countries Vokalia and Consonantia, there live the blind
+                      texts.
+                    </p>
+                  </div>
+                  <div class="footer-social-icons">
+                    <div class="menu">
+                      <a class="mbtn" href="#"
+                        ><i
+                          class="fa fa-facebook-official"
+                          aria-hidden="true"
+                        ></i
+                      ></a>
+                      <a class="mbtn" href="#"
+                        ><i class="fa fa-twitter" aria-hidden="true"></i
+                      ></a>
+                      <a class="mbtn" href="#"
+                        ><i class="fa fa-google-plus" aria-hidden="true"></i
+                      ></a>
+                      <a class="mbtn" href="#"
+                        ><i class="fa fa-youtube-play" aria-hidden="true"></i
+                      ></a>
+                      <a class="mbtn" href="#"
+                        ><i class="fa fa-instagram" aria-hidden="true"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <div class="clr"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-two">
+                <div class="footer-heading"><h2>Open Hours</h2></div>
+                <div class="footer-link">
+                  <table class="oht" cellspacing="10px">
+                    <tr>
+                      <td class="ohtl">Monday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Tuesday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Wednesday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Thurday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Friday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Saturday</td>
+                      <td>9:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                      <td class="ohtl">Sunday</td>
+                      <td>Closed</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-two">
+                <div class="footer-heading"><h2>Quick Links</h2></div>
+                <div class="footer-link">
+                  <ul class="footerlink">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="footer-section-three">
+                <div class="footer-heading"><h2>Newsletter</h2></div>
+                <div class="footer-form">
+                  <div class="footer-contact-text">
+                    <p>
+                      Far far away, behind the word mountains, far from the
+                      countries.
+                    </p>
+                  </div>
+                  <form method="post" action="#">
+                    <div class="footer-form-box">
+                      <input
+                        type="email"
+                        class="footer-form-style"
+                        placeholder="Enter email address"
+                      />
+                    </div>
+                    <div class="footer-form-box">
+                      <input
+                        type="submit"
+                        class="footer-form-submit-style"
+                        value="SUBMIT"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              &copy; caffeccino.com | Designed by ARRV
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".filter-button").click(function () {
+        var value = $(this).attr("data-filter");
+        if (value == "all") {
+          $(".filter").show("1000");
+        } else {
+          $(".filter")
+            .not("." + value)
+            .hide("3000");
+          $(".filter")
+            .filter("." + value)
+            .show("3000");
+        }
+      });
+      if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+      }
+      $(this).addClass("active");
+    });
+  </script>
+  <script src="js/cart.js"></script>
+</html>
